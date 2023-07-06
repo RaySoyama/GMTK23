@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.bottinogames.tatting": {
+      "version": "https://github.com/Kelpow/com.bottinogames.tatting.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c355818094be639d3f361b4c230704ced27c4add"
+    },
+    "com.bottinogames.willow.library": {
+      "version": "https://github.com/bottinogames/com.bottinogames.willow.library.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "1640cc48da8a5b8b712a6467dcac916bce9e0101"
+    },
     "com.unity.burst": {
       "version": "1.8.2",
       "depth": 1,
