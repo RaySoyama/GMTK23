@@ -47,7 +47,8 @@ Material:
     - _Float_1: 1
     - _Float_2: 1
     - _Float_3: 3
-    - _Float_4: 0.1
+    - _Float_4: 0.2
+    - _Float_5: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
