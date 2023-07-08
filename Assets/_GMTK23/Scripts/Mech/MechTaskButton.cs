@@ -18,8 +18,18 @@ public class MechTaskButton : IDLUIButton.Extension
         lineRenderer.SetPosition(1, mechTask.taskTransform.position);
     }
 
+    protected override void OnButtonEnabled()
+    {
+        MechTaskManager.instance.AllTaskButtons.Add(this);
+    }
+    protected override void OnButtonDisabled()
+    {
+        MechTaskManager.instance.AllTaskButtons.Remove(this);
+    }
+
     protected override void OnSelect()
     {
-        //do thing
+        mechTask.MoveCameraToTask();
+        MechTaskManager.instance.DisableAllButtons();
     }
 }

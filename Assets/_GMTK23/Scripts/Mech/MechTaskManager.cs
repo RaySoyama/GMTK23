@@ -13,8 +13,11 @@ public class MechTaskManager : MonoBehaviour
     }
     private static MechTaskManager _instance;
 
-    [SerializeField, ReadOnlyField]
-    private List<MechTask> AllTasks;
+    [field: SerializeField, ReadOnlyField]
+    public List<MechTask> AllTasks { get; set; }
+
+    [field: SerializeField, ReadOnlyField]
+    public List<MechTaskButton> AllTaskButtons { get; set; }
 
     private void Awake()
     {
@@ -33,5 +36,13 @@ public class MechTaskManager : MonoBehaviour
     private void Start()
     {
         AllTasks = new List<MechTask>(GetComponentsInChildren<MechTask>());
+    }
+
+    public void DisableAllButtons()
+    {
+        foreach (var button in AllTaskButtons)
+        {
+            button.gameObject.SetActive(false);
+        }
     }
 }

@@ -7,7 +7,8 @@ public class MechTask : MonoBehaviour
     public enum MechTaskType
     {
         unset = 0,
-        panel = 1
+        panel = 1,
+        fuel = 2
     }
 
     [field: SerializeField]
