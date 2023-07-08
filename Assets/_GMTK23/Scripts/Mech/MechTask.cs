@@ -13,6 +13,9 @@ public class MechTask : MonoBehaviour
     [field: SerializeField]
     public MechTaskType TaskType { get; private set; }
 
+    [field: SerializeField]
+    public Transform taskTransform { get; private set; }
+
     [SerializeField]
     private List<CameraManager.DollyTime> dollys;
 
@@ -30,9 +33,7 @@ public class MechTask : MonoBehaviour
     {
         CameraManager.instance.AllTaskDollys.Remove(dollys);
     }
-
-    [ContextMenu("Test")]
-    public void Test()
+    public void MoveCameraToTask()
     {
         CameraManager.instance.DollyToTask(dollys);
     }
