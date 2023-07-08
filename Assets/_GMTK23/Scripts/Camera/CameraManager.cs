@@ -12,15 +12,38 @@ public class CameraManager : MonoBehaviour
         public float timeToLerp;
     }
 
+    public static CameraManager instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+    private static CameraManager _instance;
+
     [SerializeField]
     private CinemachineVirtualCamera defaultVCam;
 
-    [SerializeField]
-    private List<DollyTime> fuelDollys;
-
+    [ReadOnlyField]
+    public List<List<DollyTime>> AllTaskDollys;
 
     private Coroutine currentDollyCour = null;
 
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Debug.LogError("Can't make multiple singletons of same type");
+            Destroy(this);
+            return;
+        }
+
+        AllTaskDollys = new List<List<DollyTime>>();
+    }
     private void Start()
     {
         ResetAllVCamPriorities();
@@ -35,12 +58,11 @@ public class CameraManager : MonoBehaviour
         defaultVCam.Priority = 99;
     }
 
-    [ContextMenu("Dolly To Fuel")]
-    public void DollyToFuel()
+    public void DollyToTask(List<DollyTime> taskDollys)
     {
         if (currentDollyCour == null)
         {
-            currentDollyCour = StartCoroutine(DollyLerp(fuelDollys));
+            currentDollyCour = StartCoroutine(DollyLerp(taskDollys));
         }
         else
         {
@@ -50,7 +72,10 @@ public class CameraManager : MonoBehaviour
 
     private void ResetAllVCamPriorities()
     {
-        ResetVCamPriorities(fuelDollys);
+        foreach (var TD in AllTaskDollys)
+        {
+            ResetVCamPriorities(TD);
+        }
     }
     private void ResetVCamPriorities(List<DollyTime> dollyTimes)
     {
