@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_New Shader Graph
+  m_Name: envtest 1
   m_Shader: {fileID: -6465566751694194690, guid: c1769ce0bb5296341b4adfa9f5b796c4,
     type: 3}
   m_ValidKeywords: []
@@ -46,13 +46,13 @@ Material:
     - _Float: 1
     - _Float_1: 1
     - _Float_2: 1
-    - _Float_3: 2000
-    - _Float_4: 0
+    - _Float_3: 3
+    - _Float_4: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 0.62352943, g: 0.078431375, b: 0.24705884, a: 0}
-    - _Color_1: {r: 0.454902, g: 0.050980397, b: 0.16862746, a: 0}
+    - _Color: {r: 0.787619, g: 0.29803923, b: 0.8392157, a: 0}
+    - _Color_1: {r: 0.73738784, g: 0.28627455, b: 1, a: 0}
     - _Vector2: {r: 0, g: 0.85, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8872084096169035964
