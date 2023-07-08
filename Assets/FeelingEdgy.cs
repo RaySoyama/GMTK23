@@ -100,11 +100,12 @@ public class FeelingEdgy : MonoBehaviour
 
             if (editing)
             {
+                Handles.zTest = UnityEngine.Rendering.CompareFunction.LessEqual;
                 for (int v = 0; v < mesh.vertices.Length; v++)
                 {
                     Vector3 vert = mesh.vertices[v];
                     Vector3 normal = mesh.normals[v];
-                    if (Handles.Button(vert, Quaternion.identity, 0.001f, 0.001f, Handles.CubeHandleCap))
+                    if (Handles.Button(vert, Quaternion.identity, 0.1f, 0.1f, Handles.CubeHandleCap))
                     {
                         if (target.subdivisions == 0 || line.positionCount == 0)
                         {
