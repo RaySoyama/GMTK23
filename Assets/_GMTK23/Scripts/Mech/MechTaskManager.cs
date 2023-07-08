@@ -42,7 +42,7 @@ public class MechTaskManager : MonoBehaviour
     {
         foreach (var button in AllTaskButtons)
         {
-            button.gameObject.SetActive(false);
+            button.HideButton();
         }
     }
 }
