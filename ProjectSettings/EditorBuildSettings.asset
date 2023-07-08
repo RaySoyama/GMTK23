@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_GMTK23/_Scenes/RaysScenes/RayDevTitleScene.unity
-    guid: cee6ce0ddf70acc4aa8523373d437365
-  - enabled: 1
-    path: Assets/_GMTK23/_Scenes/RaysScenes/RayDevScene.unity
-    guid: 8dfe4c84e20d80d448b28a0ed593ee2e
+    path: Assets/_GMTK23/_Scenes/_BuildScenes/GameScene.unity
+    guid: a31ccaa72564c374690f51597e63f5d0
   m_configObjects: {}
