@@ -6,7 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Thirdparty/Samples/Planter/0.2.0/Sample Plant Setup/Scene/Sample
-      Scene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/_GMTK23/_Scenes/RaysScenes/RayDevTitleScene.unity
+    guid: cee6ce0ddf70acc4aa8523373d437365
+  - enabled: 1
+    path: Assets/_GMTK23/_Scenes/RaysScenes/RayDevScene.unity
+    guid: 8dfe4c84e20d80d448b28a0ed593ee2e
   m_configObjects: {}
