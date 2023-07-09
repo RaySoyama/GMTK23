@@ -14,7 +14,7 @@ public class Hose : MonoBehaviour
     private Animator a;
 
 
-    private float targetHeight = 0;
+    private float targetHeight = 5;
 
     public float endHeight = 0;
 
@@ -31,6 +31,22 @@ public class Hose : MonoBehaviour
     {
 
         sj.connectedAnchor = Vector3.Lerp(sj.connectedAnchor, new Vector3(0, -targetHeight, 0), Time.deltaTime * 3f);
+
+        if (Input.GetKeyDown("k"))
+        {
+            Connect();
+        }
+
+        if (Input.GetKeyDown("j"))
+        {
+            a.SetTrigger("drop");
+        }
+
+        if (Input.GetKeyDown("h"))
+        {
+            a.SetTrigger("retract");
+        }
+
     }
 
     void SetSpringHeight(float height)
@@ -60,7 +76,7 @@ public class Hose : MonoBehaviour
 
     void Retract()
     {
-        targetHeight = 1;
+        targetHeight = 5;
         sj.GetComponent<Rigidbody>().AddForce(Vector3.forward * 0.1f);
     }
 }
