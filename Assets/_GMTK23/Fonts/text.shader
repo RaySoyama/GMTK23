@@ -335,7 +335,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( ase_worldPos.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 				float3 ase_worldNormal = TransformObjectToWorldNormal(v.ase_normal);
 				o.ase_texcoord4.xyz = ase_worldNormal;
@@ -353,7 +353,7 @@ Shader "text"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = ( temp_output_39_0 * 0.01 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
+				float3 vertexValue = ( temp_output_39_0 * 0.008 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.vertex.xyz = vertexValue;
@@ -502,7 +502,7 @@ Shader "text"
 				float3 temp_cast_1 = (( ( WorldPosition.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_1*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 				float3 BakedAlbedo = 0;
 				float3 BakedEmission = 0;
@@ -698,7 +698,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( ase_worldPos.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 				o.ase_color = v.ase_color;
 
@@ -708,7 +708,7 @@ Shader "text"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = ( temp_output_39_0 * 0.01 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
+				float3 vertexValue = ( temp_output_39_0 * 0.008 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.vertex.xyz = vertexValue;
@@ -856,7 +856,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( WorldPosition.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 
 				float Alpha = ( round( ( ( (0.6 + (SampleGradient( gradient75, ( 1.0 - abs( temp_output_39_0 ) ) ).r - 0.0) * (1.0 - 0.6) / (1.0 - 0.0)) * saturate( ( 1.0 - ( 1.4 * IN.ase_color.b ) ) ) ) * 3.0 ) ) / 3.0 );
@@ -1033,7 +1033,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( ase_worldPos.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 				o.ase_color = v.ase_color;
 
@@ -1043,7 +1043,7 @@ Shader "text"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = ( temp_output_39_0 * 0.01 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
+				float3 vertexValue = ( temp_output_39_0 * 0.008 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.vertex.xyz = vertexValue;
@@ -1174,7 +1174,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( WorldPosition.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 
 				float Alpha = ( round( ( ( (0.6 + (SampleGradient( gradient75, ( 1.0 - abs( temp_output_39_0 ) ) ).r - 0.0) * (1.0 - 0.6) / (1.0 - 0.0)) * saturate( ( 1.0 - ( 1.4 * IN.ase_color.b ) ) ) ) * 3.0 ) ) / 3.0 );
@@ -1356,7 +1356,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( ase_worldPos.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 				o.ase_texcoord.xyz = ase_worldPos;
 				
@@ -1371,7 +1371,7 @@ Shader "text"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = ( temp_output_39_0 * 0.01 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
+				float3 vertexValue = ( temp_output_39_0 * 0.008 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.vertex.xyz = vertexValue;
@@ -1477,7 +1477,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( ase_worldPos.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 
 				surfaceDescription.Alpha = ( round( ( ( (0.6 + (SampleGradient( gradient75, ( 1.0 - abs( temp_output_39_0 ) ) ).r - 0.0) * (1.0 - 0.6) / (1.0 - 0.0)) * saturate( ( 1.0 - ( 1.4 * IN.ase_color.b ) ) ) ) * 3.0 ) ) / 3.0 );
@@ -1659,7 +1659,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( ase_worldPos.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 				o.ase_texcoord.xyz = ase_worldPos;
 				
@@ -1672,7 +1672,7 @@ Shader "text"
 				#else
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
-				float3 vertexValue = ( temp_output_39_0 * 0.01 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
+				float3 vertexValue = ( temp_output_39_0 * 0.008 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.vertex.xyz = vertexValue;
 				#else
@@ -1775,7 +1775,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( ase_worldPos.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 
 				surfaceDescription.Alpha = ( round( ( ( (0.6 + (SampleGradient( gradient75, ( 1.0 - abs( temp_output_39_0 ) ) ).r - 0.0) * (1.0 - 0.6) / (1.0 - 0.0)) * saturate( ( 1.0 - ( 1.4 * IN.ase_color.b ) ) ) ) * 3.0 ) ) / 3.0 );
@@ -1964,7 +1964,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( ase_worldPos.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 				o.ase_texcoord1.xyz = ase_worldPos;
 				
@@ -1978,7 +1978,7 @@ Shader "text"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = ( temp_output_39_0 * 0.01 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
+				float3 vertexValue = ( temp_output_39_0 * 0.008 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.vertex.xyz = vertexValue;
@@ -2087,7 +2087,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( ase_worldPos.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 
 				surfaceDescription.Alpha = ( round( ( ( (0.6 + (SampleGradient( gradient75, ( 1.0 - abs( temp_output_39_0 ) ) ).r - 0.0) * (1.0 - 0.6) / (1.0 - 0.0)) * saturate( ( 1.0 - ( 1.4 * IN.ase_color.b ) ) ) ) * 3.0 ) ) / 3.0 );
@@ -2276,7 +2276,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( ase_worldPos.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 				o.ase_texcoord1.xyz = ase_worldPos;
 				
@@ -2290,7 +2290,7 @@ Shader "text"
 					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
-				float3 vertexValue = ( temp_output_39_0 * 0.01 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
+				float3 vertexValue = ( temp_output_39_0 * 0.008 * mul( GetWorldToObjectMatrix(), float4( mul( unity_CameraToWorld, float4( float3(1,0,0) , 0.0 ) ).xyz , 0.0 ) ).xyz );
 
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					v.vertex.xyz = vertexValue;
@@ -2399,7 +2399,7 @@ Shader "text"
 				float3 temp_cast_0 = (( ( ase_worldPos.y * 1.0 ) + mulTime38 )).xxx;
 				float simplePerlin3D11 = snoise( temp_cast_0*4.0 );
 				simplePerlin3D11 = simplePerlin3D11*0.5 + 0.5;
-				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * simplePerlin3D11 ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
+				float temp_output_39_0 = (-1.0 + (( simplePerlin3D11 * simplePerlin3D11 * sign( simplePerlin3D11 ) ) - 0.0) * (1.0 - -1.0) / (1.0 - 0.0));
 				
 
 				surfaceDescription.Alpha = ( round( ( ( (0.6 + (SampleGradient( gradient75, ( 1.0 - abs( temp_output_39_0 ) ) ).r - 0.0) * (1.0 - 0.6) / (1.0 - 0.0)) * saturate( ( 1.0 - ( 1.4 * IN.ase_color.b ) ) ) ) * 3.0 ) ) / 3.0 );
@@ -2447,7 +2447,6 @@ Node;AmplifyShaderEditor.SimpleMultiplyOpNode;44;140.4683,341.2193;Inherit;False
 Node;AmplifyShaderEditor.WorldToObjectMatrix;42;83.50002,480.8748;Inherit;False;0;1;FLOAT4x4;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;45;315.9682,380.2192;Inherit;False;2;2;0;FLOAT4x4;0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.WorldPosInputsNode;36;-689.8,-97.42517;Inherit;False;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
-Node;AmplifyShaderEditor.SimpleMultiplyOpNode;47;6.768627,-35.0808;Inherit;False;3;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;40;397.6999,84.37482;Inherit;False;3;3;0;FLOAT;0;False;1;FLOAT;0.02;False;2;FLOAT3;0,0,0;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.TFHCRemapNode;39;159.5999,33.57486;Inherit;False;5;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;3;FLOAT;-1;False;4;FLOAT;1;False;1;FLOAT;0
 Node;AmplifyShaderEditor.OneMinusNode;53;412.9504,10.45401;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
@@ -2457,7 +2456,6 @@ Node;AmplifyShaderEditor.ColorNode;57;701.5504,-504.3459;Inherit;False;Property;
 Node;AmplifyShaderEditor.ColorNode;58;728.8504,-713.6458;Inherit;False;Property;_OtherColor;OtherColor;2;0;Create;True;0;0;0;False;0;False;1,1,1,0;1,1,1,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;48;-439.5399,-9.941284;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;1;False;1;FLOAT;0
 Node;AmplifyShaderEditor.NoiseGeneratorNode;11;-177.2054,-102.9127;Inherit;False;Simplex3D;True;False;2;0;FLOAT3;0,0,0;False;1;FLOAT;4;False;1;FLOAT;0
-Node;AmplifyShaderEditor.RangedFloatNode;46;168.9681,200.8192;Inherit;False;Constant;_Float0;Float 0;0;0;Create;True;0;0;0;False;0;False;0.01;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.FresnelNode;52;166.9294,-135.6086;Inherit;False;Standard;WorldNormal;ViewDir;False;False;5;0;FLOAT3;0,0,1;False;4;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;2.72;False;3;FLOAT;2;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SamplerNode;49;16.88449,-476.2953;Inherit;True;Property;_curve;curve;0;0;Create;True;0;0;0;False;0;False;-1;None;None;True;0;False;white;Auto;False;Object;-1;MipLevel;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;1;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.AbsOpNode;70;691.259,169.4059;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
@@ -2485,15 +2483,15 @@ Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;17;2248.91,-83.34656;Float;
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;88;1922.356,-183.5109;Inherit;False;3;3;0;FLOAT;0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
 Node;AmplifyShaderEditor.RangedFloatNode;89;1678.271,-567.7303;Inherit;False;Property;_Scalar;Scalar;3;0;Create;True;0;0;0;False;0;False;1;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;90;1644.879,-465.4375;Inherit;False;Property;_Scalar2;Scalar2;4;0;Create;True;0;0;0;False;0;False;1;0;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.SignOpNode;91;-89.72644,117.2411;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;47;26.76863,-40.0808;Inherit;False;3;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;46;168.9681,200.8192;Inherit;False;Constant;_Float0;Float 0;0;0;Create;True;0;0;0;False;0;False;0.008;0;0;0;0;1;FLOAT;0
 WireConnection;37;0;48;0
 WireConnection;37;1;38;0
 WireConnection;44;0;41;0
 WireConnection;44;1;43;0
 WireConnection;45;0;42;0
 WireConnection;45;1;44;0
-WireConnection;47;0;11;0
-WireConnection;47;1;11;0
-WireConnection;47;2;11;0
 WireConnection;40;0;39;0
 WireConnection;40;1;46;0
 WireConnection;40;2;45;0
@@ -2535,5 +2533,9 @@ WireConnection;17;5;40;0
 WireConnection;88;0;89;0
 WireConnection;88;1;56;0
 WireConnection;88;2;90;0
+WireConnection;91;0;11;0
+WireConnection;47;0;11;0
+WireConnection;47;1;11;0
+WireConnection;47;2;91;0
 ASEEND*/
-//CHKSM=5ECE9DE9632CFE532098E05DCF2A439B93D05F77
+//CHKSM=D586455EA0F5CFE4C5E0721346EBF2BBF098CD9D
