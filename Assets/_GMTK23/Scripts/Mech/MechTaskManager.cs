@@ -45,4 +45,12 @@ public class MechTaskManager : MonoBehaviour
             button.HideButton();
         }
     }
+
+    public void EnableAllButtons()
+    {
+        foreach (var button in AllTaskButtons)
+        {
+            button.ShowButton();
+        }
+    }
 }

@@ -81,12 +81,16 @@ public class MechTask : MonoBehaviour
     {
         //should check if its actually in the list but eh
         boltButtons.Remove(boltButton);
+        bolts.Remove(boltButton.gameObject);
+        Destroy(boltButton.gameObject);
 
         if (boltButtons.Count == 0)
         {
             //game done, go back to default camera.
             //enable buttons again
             Debug.Log("Minigame done, do thing");
+            CameraManager.instance.ReturnToDefault();
+            MechTaskManager.instance.EnableAllButtons();
         }
     }
 

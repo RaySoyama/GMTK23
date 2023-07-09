@@ -10,11 +10,6 @@ public class MechBoltButton : IDLUIButton.Extension
     protected override void OnSelect()
     {
         //do thing, play anim, play sound, idk
-        Destroy(gameObject);
-    }
-
-    protected override void OnButtonDisabled()
-    {
-        mechTask.boltButtons.Remove(this);
+        mechTask.OnBoltClicked(this);
     }
 }

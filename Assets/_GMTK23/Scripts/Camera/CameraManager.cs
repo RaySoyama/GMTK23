@@ -98,6 +98,7 @@ public class CameraManager : MonoBehaviour
             CinemachineTrackedDolly dolly = DT.VCam.GetCinemachineComponent<CinemachineTrackedDolly>();
             dolly.m_PositionUnits = CinemachinePathBase.PositionUnits.Normalized;
             dolly.m_PathPosition = 0f;
+
             while (i < 1.0f)
             {
                 dolly.m_PathPosition = i;
