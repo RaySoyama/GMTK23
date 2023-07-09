@@ -33,6 +33,7 @@ public class MechTaskButton : IDLUIButton.Extension
     {
         mechTask.MoveCameraToTask();
         MechTaskManager.instance.DisableAllButtons();
+        Destroy(gameObject);
     }
 
     public void HideButton()
@@ -45,5 +46,4 @@ public class MechTaskButton : IDLUIButton.Extension
         meshRenderer.enabled = true;
         lineRenderer.enabled = true;
     }
-
 }

@@ -26,6 +26,8 @@ public class MechTask : MonoBehaviour
     private GameObject panel;
     [SerializeField]
     private List<GameObject> bolts;
+    [ReadOnlyField]
+    public List<MechBoltButton> boltButtons;
 
     private void OnEnable()
     {
@@ -38,6 +40,7 @@ public class MechTask : MonoBehaviour
     public void MoveCameraToTask()
     {
         CameraManager.instance.DollyToTask(dollys);
+        PrepareTask();
     }
 
     private void PrepareTask()
@@ -46,7 +49,7 @@ public class MechTask : MonoBehaviour
         {
             case MechTaskType.unset:
                 throw new NotImplementedException();
-                break;
+            //break;
             case MechTaskType.panel:
                 PreparePanelTask();
                 break;
@@ -57,9 +60,34 @@ public class MechTask : MonoBehaviour
 
     private void PreparePanelTask()
     {
+        boltButtons = new List<MechBoltButton>();
+
         foreach (var bolt in bolts)
         {
-            //add the button stuff?
+            var bltBtn = bolt.AddComponent<MechBoltButton>();
+            var bltBtnBUTTON = bltBtn.GetComponent<Willow.IDLUI.IDLUIButton>();
+
+            if (bolt.TryGetComponent<MeshFilter>(out MeshFilter filter))
+            {
+                bltBtnBUTTON.bounds = filter.sharedMesh.bounds;
+            }
+
+            boltButtons.Add(bltBtn);
+            bltBtn.mechTask = this;
         }
     }
+
+    public void OnBoltClicked(MechBoltButton boltButton)
+    {
+        //should check if its actually in the list but eh
+        boltButtons.Remove(boltButton);
+
+        if (boltButtons.Count == 0)
+        {
+            //game done, go back to default camera.
+            //enable buttons again
+            Debug.Log("Minigame done, do thing");
+        }
+    }
+
 }
