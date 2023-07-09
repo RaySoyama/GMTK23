@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,5 +38,28 @@ public class MechTask : MonoBehaviour
     public void MoveCameraToTask()
     {
         CameraManager.instance.DollyToTask(dollys);
+    }
+
+    private void PrepareTask()
+    {
+        switch (TaskType)
+        {
+            case MechTaskType.unset:
+                throw new NotImplementedException();
+                break;
+            case MechTaskType.panel:
+                PreparePanelTask();
+                break;
+            case MechTaskType.fuel:
+                break;
+        }
+    }
+
+    private void PreparePanelTask()
+    {
+        foreach (var bolt in bolts)
+        {
+            //add the button stuff?
+        }
     }
 }
