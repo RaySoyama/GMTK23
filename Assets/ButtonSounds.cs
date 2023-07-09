@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Willow.Library;
-public class ButtonSounds : MonoBehaviour
+using Willow.IDLUI;
+
+public class ButtonSounds : IDLUIButton.Extension
 {
     AudioSource source;
     public AudioClip[] clips;
@@ -13,7 +15,7 @@ public class ButtonSounds : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Play()
+    protected override void OnSelect()
     {
         last = last.RandomExcluding(clips.Length);
         source.PlayOneShot(clips[last]);

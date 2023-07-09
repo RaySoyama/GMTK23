@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: test 1
+  m_Name: test 2
   m_Shader: {fileID: 4800000, guid: a18a847f896546a4888607f780fa5f32, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -65,7 +65,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _curve:
-        m_Texture: {fileID: 2800000, guid: ae45ab56427effc428e7de97d3ac121b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -107,7 +107,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Scalar: 1
+    - _Scalar: 2.88
     - _Scalar2: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
