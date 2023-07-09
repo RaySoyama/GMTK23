@@ -69,7 +69,7 @@ Material:
     - _Float_4: 0.2
     - _Float_5: 0
     - _Float_6: 0.39
-    - _IsMech: 1
+    - _IsMech: 0
     - _Normal_Intensity: 1
     - _QueueControl: 0
     - _QueueOffset: 0
